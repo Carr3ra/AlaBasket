@@ -1,0 +1,2 @@
+C:\Workspace\prueba\app\build\intermediates\classes\release
+C:\Workspace\prueba\app\build\intermediates\pre-dexed\release\cordova-3.0.0-6f830c524017f74c7741b93b98a9491e8cb224b7.jar

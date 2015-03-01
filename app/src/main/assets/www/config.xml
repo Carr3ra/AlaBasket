@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.JayCee.AlaBasket" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>AlaBasket</name>
+    <description>
+        Aplicación con toda la información y los resultados del baloncesto federado alavés.
+    </description>
+    <author email="jon.jaycee@openmailbox.org" href="">
+        JayCee Universal Apps Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <!--preference name="SplashScreen" value="splash" />
+	<preference name="SplashScreenDelay" value="10000" /-->
+</widget>

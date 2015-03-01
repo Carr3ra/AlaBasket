@@ -1,0 +1,19 @@
+.notification{
+	color: red;
+	text-align: center;
+}
+.redondo{
+    -webkit-border-radius: 25px !important;
+    -moz-border-radius: 25px !important;
+	border-radius: 25px !important;
+}
+.ui-page {
+    background : url(../img/fondo.jpg) !important;
+    background-size : contain !important;
+}
+.calendarSize{
+    font-size: 14px;
+}
+.invisible{
+    visibility: hidden;
+}
