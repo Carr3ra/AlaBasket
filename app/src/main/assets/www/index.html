@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ES-es" >
+<html lang="ES-es">
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
@@ -16,7 +16,7 @@
 				$.mobile.defaultPageTransition = "none";
 			});
 		</script>
-		<script src="js/jquery.mobile-1.4.0.min.js"></script>
+		<script src="js/jquery.mobile.custom.min.js"></script>
 		<script src="js/responsive-tables.js"></script>
 		<script src="js/jquery.tinysort.min.js"></script>
 		<script src="js/alabasket.js"></script>
@@ -89,19 +89,37 @@
 							<option value="542bcc4283f8a" id="CAD.MAS.COMPETICIÓN- G. A">COMPETICIÓN GRUPO A</option>
 							
 							<option value="542bcc60b5554" id="CAD.MAS.COMPETICIÓN- G. B">COMPETICIÓN GRUPO B</option>
+
+                            <option value="54ed90d8e28c9" id="1203 - COMPETICIÓN 2ª FASE">1203-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed90f647270" id="1204 - COMPETICIÓN 2ª FASE">1204-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed9113858a9" id="1205 - COMPETICIÓN 2ª FASE">1205-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed91324c25d" id="1206 - COMPETICIÓN 2ª FASE">1206-COMPETICIÓN 2ª FASE</option>
 						</optgroup>
 						
 
 						<optgroup label="Cadete Femenino">
+                            <option value="54be3b50486ac" id="CAD.FEM.1ª - 2ª FASE">1ª - 2ª FASE</option>
+
 							<option value="540044de1c755" id="CAD.FEM.1ª - GRUPO ÚNICO">1ª - GRUPO ÚNICO</option>
 
-                            <option value="54be3b50486ac" id="CAD.FEM.1ª - 2ª FASE">1ª - 2ª FASE</option>
-						
 							<option value="542bcd0ca9dd4" id="CAD.FEM.COMPETICIÓN - GR. A">COMPETICIÓN GRUPO A</option>
 							
 							<option value="542bcd2004d00" id="CAD.FEM.COMPETICIÓN - GR. B">COMPETICIÓN GRUPO B</option>
 							
 							<option value="542bcda171425" id="CAD.FEM.COMPETICIÓN - GR. C">COMPETICIÓN GRUPO C</option>
+
+                            <option value="54ed919b1e4ca" id="1804 - COMPETICIÓN 2ª FASE">1804-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed91aea7f97" id="1805 - COMPETICIÓN 2ª FASE">1805-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed91c6f15fd" id="1806 - COMPETICIÓN 2ª FASE">1806-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed91ddcf5c7" id="1807 - COMPETICIÓN 2ª FASE">1807-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed921ccbff2" id="1808 - COMPETICIÓN 2ª FASE">1808-COMPETICIÓN 2ª FASE</option>
 						</optgroup>
 						
 						<optgroup label="Infantil Masculino">
@@ -114,6 +132,20 @@
 							<option value="542bcddfebcb8" id="INF.MAS.GRUPO C">GRUPO C</option>
 							
 							<option value="542bcdf3cbcb9" id="INF.MAS.GRUPO D">GRUPO D</option>
+
+                            <option value="54ed92788a961" id="1405 - COMPETICIÓN 2ª FASE">1405-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed928eed784" id="1406 - COMPETICIÓN 2ª FASE">1406-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed92a781b83" id="1407 - COMPETICIÓN 2ª FASE">1407-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed92bc05828" id="1408 - COMPETICIÓN 2ª FASE">1408-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed92cb587a9" id="1409 - COMPETICIÓN 2ª FASE">1409-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed935c0a0ca" id="1410 - COMPETICIÓN 2ª FASE">1410-COMPETICIÓN 2ª FASE</option>
+
+                            <option value="54ed92f692887" id="1411 - COMPETICIÓN 2ª FASE">1411-COMPETICIÓN 2ª FASE</option>
 						</optgroup>
 						
 						<optgroup label="Infantil Femenino">
@@ -460,6 +492,7 @@
 						var table;
 						var identif;
 						var numTablas = elements.length-2;
+						var content = "";
 						for (var i = 1; i < elements.length; i++) {
 							rows = elements[i].rows;
 							if (i==1){
@@ -468,9 +501,10 @@
 									var cells = rows[jj].cells;
 									$("#tablaEquipos tbody").append("<tr id='row"+jj+"'></tr>");
 									for (var kk = 1; kk < cells.length; kk++){
-										
-										$("#row"+jj).append("<td>"+cells[kk].innerHTML+"</td>");
+										content += "<td>"+cells[kk].innerHTML+"</td>";
 									}
+									$("#row"+jj).append(content);
+									content = "";
 								}
 								$("#tablaEquipos").table().table("refresh");
 								
@@ -488,9 +522,10 @@
 									var cells = rows[jj].cells;
 									
 									for (var kk = 0; kk < 3; kk++){
-										
-										$("#collapsible-set>div:last-child>table>tbody>tr:last-child").append("<td>"+cells[kk].innerHTML+"</td>");
+										content += "<td>"+cells[kk].innerHTML+"</td>";
 									}
+									$("#collapsible-set>div:last-child>table>tbody>tr:last-child").append(content);
+									content = "";
 								}
 								identif = numTablas+i;
 								$("#collapsible-set").append("<div data-role='collapsible' sort='"+identif+"' class='esColapsible'></div>");
@@ -504,9 +539,10 @@
 									cells = rows[jjj].cells;
 									
 									for (var kkk = 3; kkk < 6; kkk++){
-										
-										$("#collapsible-set>div:last-child>table>tbody>tr:last-child").append("<td>"+cells[kkk].innerHTML+"</td>");
+										content += "<td>"+cells[kkk].innerHTML+"</td>";
 									}
+									$("#collapsible-set>div:last-child>table>tbody>tr:last-child").append(content);
+									content = "";
 								}
 							}
 						}
@@ -574,7 +610,7 @@
 			function checkConnection(){
 				var networkState = navigator.connection.type;
 				if(Connection.NONE==networkState)
-					return "<p>No dispones de conexión a internet.</p>";
+					return "<p>Comprueba tu conexión a internet.</p>";
 				return "<p>Error obteniendo los datos solicitados, servidor no disponible.</p>";
 			}
 		</script>
