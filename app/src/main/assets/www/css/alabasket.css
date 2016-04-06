@@ -1,19 +1,5 @@
-.notification{
-	color: red;
-	text-align: center;
-}
-.redondo{
-    -webkit-border-radius: 25px !important;
-    -moz-border-radius: 25px !important;
-	border-radius: 25px !important;
-}
-.ui-page {
-    background : url(../img/fondo.jpg) !important;
-    background-size : contain !important;
-}
-.calendarSize{
-    font-size: 12px;
-}
-.invisible{
-    visibility: hidden;
-}
+html{-webkit-user-select: none;}
+.notification{color:red;text-align:center}.redondo{-webkit-border-radius:25px!important;-moz-border-radius:25px!important;border-radius:25px!important}
+.ui-page{background:url(../img/bkg-01.png) repeat !important;}
+.calendarSize{font-size:13px}.invisible{visibility:hidden}#tablaJor tbody tr:nth-child(odd) td,#tablaJor tbody tr:nth-child(odd) th{background-color:#c8c8c8;!important;background-color:rgba(0,0,0,.08)!important}#tablaJor tbody td:last-child{border-bottom:1px ridge rgba(44,62,80,.3)!important}.table-stripe.table-stroke tbody tr:last-child th,.table-stripe.table-stroke tbody tr:last-child td{border-bottom:1px solid #e6e6e6;!important;border-bottom:1px solid rgba(0,0,0,.05)!importat}
+table{background:#fff}
