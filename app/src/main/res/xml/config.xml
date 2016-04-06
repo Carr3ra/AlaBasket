@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="com.JayCee.AlaBasket" version="0.0.5" xmlns="http://www.w3.org/ns/widgets">
+    <name>AlaBasket</name>
+    <description>
+        Aplicación con toda la información y los resultados del baloncesto federado alavés.
+    </description>
+    <author email="jon.jaycee@openmailbox.org" href="">
+        JayCee Universal Apps Team
+    </author>
+    <content src="index.html" />
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <access origin="*" />
+    <preference name="useBrowserHistory" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+</widget>
