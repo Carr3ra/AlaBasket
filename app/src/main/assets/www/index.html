@@ -1,386 +1,451 @@
 <!DOCTYPE html>
 <html lang="ES-es">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta http-equiv="Content-Security-Policy" content="*" />
-		<title>AlaBasket</title>
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/flat-ui-theme/jquery.mobile.flatui.min.css">
-		<link rel="stylesheet" href="css/responsive-tables.css">
-		<link rel="stylesheet" href="css/alabasket.css">
-		<script src="cordova.js"></script>
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Security-Policy" content="*"/>
+    <title>AlaBasket</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/flat-ui-theme/jquery.mobile.flatui.min.css">
+    <link rel="stylesheet" href="css/responsive-tables.css">
+    <link rel="stylesheet" href="css/alabasket.css">
+    <script src="cordova.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
 			$(document).bind("mobileinit", function() {
 				$.mobile.defaultPageTransition = "none";
 			});
 			document.addEventListener("deviceready", function(){
-			    window.analytics.startTrackerWithId('XXXXXXX');
+			    window.analytics.startTrackerWithId('XX-XXXXXXX-X');
 				try{
     				StatusBar.backgroundColorByHexString("#1C2E40");
     			}
     			catch(err){}
 			});
-		</script>
-		<script src="js/jquery.mobile.custom.min.js"></script>
-		<script src="js/responsive-tables.js"></script>
-		<script src="js/jquery.tinysort.min.js"></script>
-		<script src="js/alabasket.js"></script>
-	</head>
-	<body>
-		<div data-role="page" id="inicio">
 
-			<div data-role="header" data-position="fixed">
-				<a onclick="navigator.app.exitApp();" data-role="button" data-icon="delete" data-theme="b" class="redondo">Salir</a>
-				<h1>AlaBasket</h1>
-			</div>
+    </script>
+    <script src="js/jquery.mobile.custom.min.js"></script>
+    <script src="js/responsive-tables.js"></script>
+    <script src="js/jquery.tinysort.min.js"></script>
+    <script src="js/alabasket.js"></script>
+</head>
+<body>
+<div data-role="page" id="inicio">
 
-			<div data-role="content" id="content" class="fondo">
-				<div id="tabla" data-role="fieldcontain">
-					<div id="notif" class="notification"></div>
-					<select name="grupo" id="grupo" data-theme="b" class="redondo">
-						<option value="">-- Selecciona una liga --</option>
-						
-						<optgroup label="Senior Masculino">
-							<option value="55e58fd16a1fb" id="SEN.MAS. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO</option>
-	
-							<option value="55e58e1249e75" id="SEN.MAS. 2ª-GRUPO A">2ª - GRUPO A</option>
-	
-							<option value="55e58e390fcf0" id="SEN.MAS. 2ª-GRUPO B">2ª - GRUPO B</option>
-	
-							<option value="55e58e5d76257" id="SEN.MAS. 3ª-GRUPO A">3ª - GRUPO A</option>
-	
-							<option value="55e58e7f46862" id="SEN.MAS. 3ª-GRUPO B">3ª - GRUPO B</option>
-	
-							<option value="55e58e97bf752" id="SEN.MAS. 3ª-GRUPO C">3ª - GRUPO C</option>
-						</optgroup>
-						
-						<optgroup label="Senior Femenino">
-							<option value="55e58f1d2f75a" id="SEN.FEM. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO</option>
+    <div data-role="header" data-position="fixed">
+        <a onclick="navigator.app.exitApp();" data-role="button" data-icon="delete" data-theme="b"
+           class="redondo">Salir</a>
 
-							<option value="56c49e47b7abf" id="SEN.FEM. 2ª-FASE 2 GRUPO 1">2ª - FASE 2 GR.1</option>
+        <h1>AlaBasket</h1>
+    </div>
 
-							<option value="56c49ec093256" id="SEN.FEM. 2ª-FASE 2 GRUPO 2">2ª - FASE 2 GR.2</option>
+    <div data-role="content" id="content" class="fondo">
+        <div id="tabla" data-role="fieldcontain">
+            <div id="notif" class="notification"></div>
+            <select name="grupo" id="grupo" data-theme="b" class="redondo">
+                <option value="">-- Selecciona una liga --</option>
 
-							<option value="56c49edb9964c" id="SEN.FEM. 2ª-FASE 2 GRUPO 3">2ª - FASE 2 GR.3</option>
+                <optgroup label="Senior Masculino">
+                    <option value="55e58fd16a1fb" id="SEN.MAS. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO
+                    </option>
 
-							<option value="56c49f008abe7" id="SEN.FEM. 2ª-FASE 2 GRUPO 4">2ª - FASE 2 GR.4</option>
-	
-							<option value="55e58f3572b90" id="SEN.FEM. 2ª-GRUPO A">2ª - GRUPO A</option>
-	
-							<option value="55e58f4222647" id="SEN.FEM. 2ª-GRUPO B">2ª - GRUPO B</option>
-						</optgroup>
-						
-						<optgroup label="Junior Masculino">
+                    <option value="55e58e1249e75" id="SEN.MAS. 2ª-GRUPO A">2ª - GRUPO A</option>
 
-							<option value="569383b6409e5" id="JUN.MAS. 1ª - 2ª FASE">1ª - 2ª FASE</option>
+                    <option value="55e58e390fcf0" id="SEN.MAS. 2ª-GRUPO B">2ª - GRUPO B</option>
 
-							<option value="55e58ec066c4f" id="JUN.MAS. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO</option>
-	
-							<option value="55e58ed3f0f1f" id="JUN.MAS. 2ª-GRUPO ÚNICO">2ª - GRUPO ÚNICO</option>
-						</optgroup>
+                    <option value="55e58e5d76257" id="SEN.MAS. 3ª-GRUPO A">3ª - GRUPO A</option>
 
-						<optgroup label="Junior Femenino">
-							<option value="569383dae61d5" id="JUN.FEM. 1ª - 2ª FASE">1ª - 2ª FASE</option>
+                    <option value="55e58e7f46862" id="SEN.MAS. 3ª-GRUPO B">3ª - GRUPO B</option>
 
-							<option value="55f006e7aec4f" id="JUN.FEM. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO</option>
+                    <option value="55e58e97bf752" id="SEN.MAS. 3ª-GRUPO C">3ª - GRUPO C</option>
+                </optgroup>
 
-							<option value="55f0073e3f679" id="JUN.FEM. 2ª-GRUPO ÚNICO">2ª - GRUPO ÚNICO</option>
-						</optgroup>
-						
-						<optgroup label="Cadete Masculino">
-							<option value="569383f1370ef" id="CAD.MAS. 1ª - 2ª FASE">1ª - 2ª FASE</option>
+                <optgroup label="Senior Femenino">
+                    <option value="55e58f1d2f75a" id="SEN.FEM. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO
+                    </option>
 
-							<option value="55e58ef195018" id="CAD.MAS.1ª - GRUPO A">1ª - GRUPO A</option>
+                    <option value="56c49e47b7abf" id="SEN.FEM. 2ª-FASE 2 GRUPO 1">2ª - FASE 2 GR.1
+                    </option>
 
-                            <option value="55e58efe967e3" id="CAD.MAS.1ª - GRUPO B">1ª - GRUPO B</option>
+                    <option value="56c49ec093256" id="SEN.FEM. 2ª-FASE 2 GRUPO 2">2ª - FASE 2 GR.2
+                    </option>
 
-							<option value="56c59fe31088e" id="CAD.MAS.ESCOLAR 2ªFASE GR. 1">ESCOLAR 2ªFASE GR.1</option>
+                    <option value="56c49edb9964c" id="SEN.FEM. 2ª-FASE 2 GRUPO 3">2ª - FASE 2 GR.3
+                    </option>
 
-							<option value="56c5a78ad42ad" id="CAD.MAS.ESCOLAR 2ªFASE GR. 2">ESCOLAR 2ªFASE GR.2</option>
+                    <option value="56c49f008abe7" id="SEN.FEM. 2ª-FASE 2 GRUPO 4">2ª - FASE 2 GR.4
+                    </option>
 
-							<option value="56c58f34496f7" id="CAD.MAS.ESCOLAR 2ªFASE GR. 3">ESCOLAR 2ªFASE GR.3</option>
+                    <option value="55e58f3572b90" id="SEN.FEM. 2ª-GRUPO A">2ª - GRUPO A</option>
 
-							<option value="56c58f494072e" id="CAD.MAS.ESCOLAR 2ªFASE GR. 4">ESCOLAR 2ªFASE GR.4</option>
+                    <option value="55e58f4222647" id="SEN.FEM. 2ª-GRUPO B">2ª - GRUPO B</option>
+                </optgroup>
 
-							<option value="560ba7c288031" id="CAD.MAS.ESCOLAR - GR. A">ESCOLAR GRUPO A</option>
-							
-							<option value="560ba7cfa2f0d" id="CAD.MAS.ESCOLAR - GR. B">ESCOLAR GRUPO B</option>
-						</optgroup>
-						
+                <optgroup label="Junior Masculino">
 
-						<optgroup label="Cadete Femenino">
-							<option value="569cb4085c7d4" id="CAD.FEM.1ª - 2ªFASE GRUPO A">1ª - 2ªFASE GR. A</option>
+                    <option value="569383b6409e5" id="JUN.MAS. 1ª - 2ª FASE">1ª - 2ª FASE</option>
 
-							<option value="569cbdbe0f525" id="CAD.FEM.1ª - 2ªFASE GRUPO B">1ª - 2ªFASE GR. B</option>
+                    <option value="55e58ec066c4f" id="JUN.MAS. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO
+                    </option>
 
-                            <option value="55e58f99b6e09" id="CAD.FEM.1ª - GRUPO A">1ª - GRUPO A</option>
+                    <option value="55e58ed3f0f1f" id="JUN.MAS. 2ª-GRUPO ÚNICO">2ª - GRUPO ÚNICO
+                    </option>
+                </optgroup>
 
-							<option value="55e58fa6ab52c" id="CAD.FEM.1ª - GRUPO B">1ª - GRUPO B</option>
+                <optgroup label="Junior Femenino">
+                    <option value="569383dae61d5" id="JUN.FEM. 1ª - 2ª FASE">1ª - 2ª FASE</option>
 
-							<option value="560ba90253cdc" id="CAD.FEM.ESCOLAR - GR. A">ESCOLAR GRUPO A</option>
-							
-							<option value="560ba90fc5af1" id="CAD.FEM.ESCOLAR - GR. B">ESCOLAR GRUPO B</option>
-							
-							<!--option value="542bcda171425" id="CAD.FEM.COMPETICIÓN - GR. C">COMPETICIÓN GRUPO C</option>
+                    <option value="55f006e7aec4f" id="JUN.FEM. 1ª-GRUPO ÚNICO">1ª - GRUPO ÚNICO
+                    </option>
 
-                            <option value="54ed919b1e4ca" id="1804 - COMPETICIÓN 2ª FASE">1804-COMPETICIÓN 2ª FASE</option>
+                    <option value="55f0073e3f679" id="JUN.FEM. 2ª-GRUPO ÚNICO">2ª - GRUPO ÚNICO
+                    </option>
+                </optgroup>
 
-                            <option value="54ed921ccbff2" id="1808 - COMPETICIÓN 2ª FASE">1808-COMPETICIÓN 2ª FASE</option-->
-						</optgroup>
-						
-						<optgroup label="Infantil Masculino">
-                            <!--option value="54ed925723270" id="INF.MAS.RENDIMIENTO FASE 2">RENDIMIENTO FASE 2</option-->
+                <optgroup label="Cadete Masculino">
+                    <option value="569383f1370ef" id="CAD.MAS. 1ª - 2ª FASE">1ª - 2ª FASE</option>
 
-							<option value="560ba81f50df6" id="INF.MAS. GRUPO A">GRUPO A</option>
-	
-							<option value="560ba83d5d77c" id="INF.MAS. GRUPO B">GRUPO B</option>
-	
-							<option value="560ba879530a5" id="INF.MAS. GRUPO C">GRUPO C</option>
-							
-							<option value="560ba888726a3" id="INF.MAS. GRUPO D">GRUPO D</option>
+                    <option value="55e58ef195018" id="CAD.MAS.1ª - GRUPO A">1ª - GRUPO A</option>
 
-                            <option value="560ba89779b7d" id="INF.MAS. GRUPO E">GRUPO E</option>
+                    <option value="55e58efe967e3" id="CAD.MAS.1ª - GRUPO B">1ª - GRUPO B</option>
 
-							<option value="564c3a43f401a" id="INF.MAS. FASE 2 RENDIMIENTO">FASE 2 RENDIMIENTO</option>
+                    <option value="56c59fe31088e" id="CAD.MAS.ESCOLAR 2ªFASE GR. 1">ESCOLAR 2ªFASE
+                        GR.1
+                    </option>
 
-                            <option value="564c3a5732a76" id="INF.MAS. FASE 2 COMPETICIÓN">FASE 2 COMPETICIÓN</option>
+                    <option value="56c5a78ad42ad" id="CAD.MAS.ESCOLAR 2ªFASE GR. 2">ESCOLAR 2ªFASE
+                        GR.2
+                    </option>
 
-                            <option value="564c3a74e07c2" id="INF.MAS. FASE 2 GRUPO 3">FASE 2 GRUPO 3</option>
+                    <option value="56c58f34496f7" id="CAD.MAS.ESCOLAR 2ªFASE GR. 3">ESCOLAR 2ªFASE
+                        GR.3
+                    </option>
 
-                            <!--option value="54ed92788a961" id="1405 - COMPETICIÓN 2ª FASE">1405-COMPETICIÓN 2ª FASE</option>
+                    <option value="56c58f494072e" id="CAD.MAS.ESCOLAR 2ªFASE GR. 4">ESCOLAR 2ªFASE
+                        GR.4
+                    </option>
 
-                            <option value="54ed935c0a0ca" id="1410 - COMPETICIÓN 2ª FASE">1410-COMPETICIÓN 2ª FASE</option>
+                    <option value="560ba7c288031" id="CAD.MAS.ESCOLAR - GR. A">ESCOLAR GRUPO A
+                    </option>
 
-                            <option value="54ed92f692887" id="1411 - COMPETICIÓN 2ª FASE">1411-COMPETICIÓN 2ª FASE</option-->
-						</optgroup>
-						
-						<optgroup label="Infantil Femenino">
-							<option value="5694ea9748c0d" id="INF.FEM. RENDIMIENTO 2ªFASE">2ªFASE RENDIMIENTO</option>
-	
-							<option value="5694eacb787bd" id="INF.FEM. 2ªFASE GRUPO 2">FASE 2 GRUPO 2</option>
-	
-							<option value="5694eadee18dd" id="INF.FEM. 2ªFASE GRUPO 3">FASE 2 GRUPO 3</option>
-	
-							<option value="5694eaec0c507" id="INF.FEM. 2ªFASE GRUPO 4">FASE 2 GRUPO 4</option>
-	
-							<option value="5694eb0650557" id="INF.FEM. 2ªFASE GRUPO 5">FASE 2 GRUPO 5</option>
-							
-							<option value="560ba924afed5" id="INF.FEM. GRUPO A">GRUPO A</option>
-	
-							<option value="560ba93663a46" id="INF.FEM. GRUPO B">GRUPO B</option>
-	
-							<option value="560ba945a1922" id="INF.FEM. GRUPO C">GRUPO C</option>
-	
-							<option value="560ba960e57c7" id="INF.FEM. GRUPO D">GRUPO D</option>
-	
-							<!--option value="543ba8205533b" id="INF.FEM. GRUPO E">GRUPO E</option>
-							
-							<option value="543ba832d8460" id="INF.FEM. GRUPO F">GRUPO F</option>
-							
-							<option value="543ba845f0069" id="INF.FEM. GRUPO G">GRUPO G</option>
-							
-							<option value="543ba8510bf9b" id="INF.FEM. GRUPO H">GRUPO H</option-->
-						</optgroup>
-						
-						<optgroup label="Alevín Masculino">
-							<option value="56b87157adb8f" id="ALEVÍN MASC. 2ªFASE GRUPO 1">FASE 2 GRUPO 1</option>
+                    <option value="560ba7cfa2f0d" id="CAD.MAS.ESCOLAR - GR. B">ESCOLAR GRUPO B
+                    </option>
+                </optgroup>
 
-							<option value="56b8716e44f9d" id="ALEVÍN MASC. - 2ªFASE GRUPO 2">FASE 2 GRUPO 2</option>
 
-							<option value="561f94ad9a66f" id="ALEVÍN MASC. - GRUPO A">GRUPO A</option>
-							
-							<option value="561f94b958645" id="ALEVÍN MASC. - GRUPO B">GRUPO B</option>
-							
-							<option value="561f94c59a904" id="ALEVÍN MASC. - GRUPO C">GRUPO C</option>
-						</optgroup>
-						
-						<optgroup label="Alevín Femenino">
-							<option value="56b86ff7e772e" id="ALEVÍN FEM.1ª 2ªFASE - GRUPO 1">1ª FASE 2 - GR. 1</option>
+                <optgroup label="Cadete Femenino">
+                    <option value="569cb4085c7d4" id="CAD.FEM.1ª - 2ªFASE GRUPO A">1ª - 2ªFASE GR.
+                        A
+                    </option>
 
-							<option value="56b870819ee57" id="ALEVÍN FEM.1ª 2ªFASE - GRUPO 2">1ª FASE 2 - GR. 2</option>
+                    <option value="569cbdbe0f525" id="CAD.FEM.1ª - 2ªFASE GRUPO B">1ª - 2ªFASE GR.
+                        B
+                    </option>
 
-							<option value="56b870a3c93ec" id="ALEVÍN FEM.1ª 2ªFASE - GRUPO 3">1ª FASE 2 - GR. 3</option>
+                    <option value="55e58f99b6e09" id="CAD.FEM.1ª - GRUPO A">1ª - GRUPO A</option>
 
-							<option value="561f950bb8623" id="ALEVÍN FEM.1ª - GRUPO A">1ª - GRUPO A</option>
-							
-							<option value="561f951757621" id="ALEVÍN FEM.1ª - GRUPO B">1ª - GRUPO B</option>
+                    <option value="55e58fa6ab52c" id="CAD.FEM.1ª - GRUPO B">1ª - GRUPO B</option>
 
-							<option value="561f9522ee69a" id="ALEVÍN FEM.1ª - GRUPO C">1ª - GRUPO C</option>
-							
-							<option value="561f94debc9d9" id="ALEVÍN FEM.2ª - GRUPO A">2ª - GRUPO A</option>
-							
-							<option value="561f94ea256e2" id="ALEVÍN FEM.2ª - GRUPO B">2ª - GRUPO B</option>
+                    <option value="560ba90253cdc" id="CAD.FEM.ESCOLAR - GR. A">ESCOLAR GRUPO A
+                    </option>
 
-							<option value="561f94f72db0d" id="ALEVÍN FEM.2ª - GRUPO C">2ª - GRUPO C</option>
-						</optgroup>
-						
-						<optgroup label="Alevín Mixto">
-                            <!--option value="54d87d2e07953" id="ALEVÍN MIXTO 1ª - FASE 2 - GRUPO 1">1ª -FASE 2- GRUPO 1</option>
+                    <option value="560ba90fc5af1" id="CAD.FEM.ESCOLAR - GR. B">ESCOLAR GRUPO B
+                    </option>
 
-                            <option value="54d87d3a566e9" id="ALEVÍN MIXTO 1ª - FASE 2 - GRUPO 2">1ª -FASE 2- GRUPO 2</option-->
+                    <!--option value="542bcda171425" id="CAD.FEM.COMPETICIÓN - GR. C">COMPETICIÓN GRUPO C</option>
 
-							<option value="561f954d688da" id="ALEVÍN MIXTO 1ª - GRUPO A">1ª - GRUPO A</option>
-	
-							<option value="561f955da75a0" id="ALEVÍN MIXTO 1ª - GRUPO B">1ª - GRUPO B</option>
-	
-							<option value="561f953a87453" id="ALEVÍN MIXTO 2ª">2ª - G. ÚNICO</option>
-						</optgroup>
-						
-						<optgroup label="Benjamín Mixto">
-							<option value="5628b737582ad" id="BENJ. MIXTO GRUPO A">GRUPO A</option>
-	
-							<option value="5628b7481c2ed" id="BENJ. MIXTO GRUPO B">GRUPO B</option>
-	
-							<option value="5628b75a86a0d" id="BENJ. MIXTO GRUPO C">GRUPO C</option>
-	
-							<option value="5628b77a060e6" id="BENJ. MIXTO GRUPO D">GRUPO D</option>
-	
-							<option value="5628b78a55ca2" id="BENJ. MIXTO GRUPO E">GRUPO E</option>
-						</optgroup>
-					</select>
+                    <option value="54ed919b1e4ca" id="1804 - COMPETICIÓN 2ª FASE">1804-COMPETICIÓN 2ª FASE</option>
 
-					<br/>
+                    <option value="54ed921ccbff2" id="1808 - COMPETICIÓN 2ª FASE">1808-COMPETICIÓN 2ª FASE</option-->
+                </optgroup>
 
-					<a id="jorn" href="#jornada" class="boton redondo" data-role="button" data-icon="arrow-r" data-theme="a">Próxima jornada</a>
-					<br/>
+                <optgroup label="Infantil Masculino">
+                    <!--option value="54ed925723270" id="INF.MAS.RENDIMIENTO FASE 2">RENDIMIENTO FASE 2</option-->
 
-					<a id="clasi" href="#clasificacion" class="boton redondo" data-role="button" data-icon="grid" data-theme="a">Clasificación</a>
-					<br/>
+                    <option value="560ba81f50df6" id="INF.MAS. GRUPO A">GRUPO A</option>
 
-					<a id="calend" href="#calendario" class="boton redondo" data-role="button" data-icon="calendar" data-theme="a">Calendario y resultados</a>
-				</div>
-			</div>
+                    <option value="560ba83d5d77c" id="INF.MAS. GRUPO B">GRUPO B</option>
 
-			<div data-role="footer"  data-position="fixed">
-                    <h4>Temporada 2015-2016</h4>
-			</div>
-		</div>
+                    <option value="560ba879530a5" id="INF.MAS. GRUPO C">GRUPO C</option>
 
-		<div data-role="page" id="clasificacion">
+                    <option value="560ba888726a3" id="INF.MAS. GRUPO D">GRUPO D</option>
 
-			<div data-role="header">
-				<a href="#inicio" data-role="button" data-icon="home" data-theme="b" class="redondo" data-transition="slideup">Inicio</a>
-				<h1>AlaBasket</h1>
-			</div>
+                    <option value="560ba89779b7d" id="INF.MAS. GRUPO E">GRUPO E</option>
 
-			<div data-role="content">
-				<h4 id="tituloClasi"></h4>
-				<h4 id="categoria"></h4>
-				<div id="notifClasi" class="notification"></div>
-				<table class="responsive table-stroke table-stripe" id="tablaClasi">
-					<thead>
-						<tr>
-							<th>Pos.</th>
-							<th>Equipo</th>
-							<th>J</th>
-							<th>G</th>
-							<th>P</th>
-							<th>NP</th>
-							<th>S</th>
-							<th>TF</th>
-							<th>TC</th>
-							<th>Puntos</th>
-						</tr>
-					</thead>
-					<tbody style="font-size:14px !important;"></tbody>
-				</table>
-			</div>
+                    <option value="564c3a43f401a" id="INF.MAS. FASE 2 RENDIMIENTO">FASE 2
+                        RENDIMIENTO
+                    </option>
 
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#jornada" data-icon="arrow-r">Próxima jornada</a></li>
-						<li><a href="#calendario" data-icon="calendar">Calendario</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-		<div data-role="page" id="jornada">
+                    <option value="564c3a5732a76" id="INF.MAS. FASE 2 COMPETICIÓN">FASE 2
+                        COMPETICIÓN
+                    </option>
 
-			<div data-role="header" data-position="fixed">
-				<a href="#inicio" data-icon="home" data-theme="b" class="redondo" data-transition="slideup">Inicio</a>
-				<h1>AlaBasket</h1>
-			</div>
+                    <option value="564c3a74e07c2" id="INF.MAS. FASE 2 GRUPO 3">FASE 2 GRUPO 3
+                    </option>
 
-			<div data-role="content">
-				<h4 id="tituloJornada"></h4>
-				<h4 id="categori"></h4>
-				<div id="notifJorn" class="notification"></div>
-				<table data-role="table" data-mode="reflow" class="ui-responsive table-stroke table-stripe" id="tablaJor">
-					<thead>
-						<tr>
-							<th data-priority="1">Equipo local</th>
-							<th data-priority="2">Tanteo</th>
-							<th data-priority="3">Equipo visitante</th>
-							<th data-priority="4">Fecha</th>
-							<th data-priority="5">Hora</th>
-							<th data-priority="6">Campo</th>
-							<th data-priority="7">Dirección</th>
-							<th data-priority="8">Localidad</th>
-							<th data-priority="9">Notas</th>
-							<th data-priority="10">Aplazado</th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-				</table>
-			</div>
+                    <!--option value="54ed92788a961" id="1405 - COMPETICIÓN 2ª FASE">1405-COMPETICIÓN 2ª FASE</option>
 
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#clasificacion" data-icon="grid">Clasificación</a></li>
-						<li><a href="#calendario" data-icon="calendar">Calendario</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-		<div data-role="page" id="calendario">
+                    <option value="54ed935c0a0ca" id="1410 - COMPETICIÓN 2ª FASE">1410-COMPETICIÓN 2ª FASE</option>
 
-			<div data-role="header">
-				<a href="#inicio" data-icon="home" data-theme="b" class="redondo" data-transition="slideup">Inicio</a>
-				<h1>AlaBasket</h1>
-			</div>
+                    <option value="54ed92f692887" id="1411 - COMPETICIÓN 2ª FASE">1411-COMPETICIÓN 2ª FASE</option-->
+                </optgroup>
 
-			<div data-role="content">
-				<h3 id="tituloCalendario">Calendario y resultados</h3>
-				<h3 id="cat"></h3>
-				<div id="notifCal" class="notification"></div>
-				<div data-role="collapsible-set" id="collapsible-set">
-					<div data-role="collapsible" data-collapsed="true" sort="0">
-						<h3>Equipos</h3>
-						<table data-mode="reflow" class="ui-responsive table-stroke table-stripe" id="tablaEquipos">
-							<thead>
-								<tr>
-									<th>Equipo</th>
-									<th>Población</th>
-									<th>Día</th>
-									<th>Hora</th>
-									<th>Cancha</th>
-									<th>Equipación</th>
-									<th>Delegado</th>
-								</tr>
-							</thead>
-							<tbody></tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+                <optgroup label="Infantil Femenino">
+                    <option value="5694ea9748c0d" id="INF.FEM. RENDIMIENTO 2ªFASE">2ªFASE
+                        RENDIMIENTO
+                    </option>
 
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar" >
-					<ul>
-						<li><a href="#clasificacion" data-icon="grid">Clasificación</a></li>
-						<li><a href="#jornada" data-icon="arrow-r">Próxima jornada</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<script>
+                    <option value="5694eacb787bd" id="INF.FEM. 2ªFASE GRUPO 2">FASE 2 GRUPO 2
+                    </option>
+
+                    <option value="5694eadee18dd" id="INF.FEM. 2ªFASE GRUPO 3">FASE 2 GRUPO 3
+                    </option>
+
+                    <option value="5694eaec0c507" id="INF.FEM. 2ªFASE GRUPO 4">FASE 2 GRUPO 4
+                    </option>
+
+                    <option value="5694eb0650557" id="INF.FEM. 2ªFASE GRUPO 5">FASE 2 GRUPO 5
+                    </option>
+
+                    <option value="560ba924afed5" id="INF.FEM. GRUPO A">GRUPO A</option>
+
+                    <option value="560ba93663a46" id="INF.FEM. GRUPO B">GRUPO B</option>
+
+                    <option value="560ba945a1922" id="INF.FEM. GRUPO C">GRUPO C</option>
+
+                    <option value="560ba960e57c7" id="INF.FEM. GRUPO D">GRUPO D</option>
+
+                    <!--option value="543ba8205533b" id="INF.FEM. GRUPO E">GRUPO E</option>
+
+                    <option value="543ba832d8460" id="INF.FEM. GRUPO F">GRUPO F</option>
+
+                    <option value="543ba845f0069" id="INF.FEM. GRUPO G">GRUPO G</option>
+
+                    <option value="543ba8510bf9b" id="INF.FEM. GRUPO H">GRUPO H</option-->
+                </optgroup>
+
+                <optgroup label="Alevín Masculino">
+                    <option value="56b87157adb8f" id="ALEVÍN MASC. 2ªFASE GRUPO 1">FASE 2 GRUPO 1
+                    </option>
+
+                    <option value="56b8716e44f9d" id="ALEVÍN MASC. - 2ªFASE GRUPO 2">FASE 2 GRUPO
+                        2
+                    </option>
+
+                    <option value="561f94ad9a66f" id="ALEVÍN MASC. - GRUPO A">GRUPO A</option>
+
+                    <option value="561f94b958645" id="ALEVÍN MASC. - GRUPO B">GRUPO B</option>
+
+                    <option value="561f94c59a904" id="ALEVÍN MASC. - GRUPO C">GRUPO C</option>
+                </optgroup>
+
+                <optgroup label="Alevín Femenino">
+                    <option value="56b86ff7e772e" id="ALEVÍN FEM.1ª 2ªFASE - GRUPO 1">1ª FASE 2 -
+                        GR. 1
+                    </option>
+
+                    <option value="56b870819ee57" id="ALEVÍN FEM.1ª 2ªFASE - GRUPO 2">1ª FASE 2 -
+                        GR. 2
+                    </option>
+
+                    <option value="56b870a3c93ec" id="ALEVÍN FEM.1ª 2ªFASE - GRUPO 3">1ª FASE 2 -
+                        GR. 3
+                    </option>
+
+                    <option value="561f950bb8623" id="ALEVÍN FEM.1ª - GRUPO A">1ª - GRUPO A</option>
+
+                    <option value="561f951757621" id="ALEVÍN FEM.1ª - GRUPO B">1ª - GRUPO B</option>
+
+                    <option value="561f9522ee69a" id="ALEVÍN FEM.1ª - GRUPO C">1ª - GRUPO C</option>
+
+                    <option value="561f94debc9d9" id="ALEVÍN FEM.2ª - GRUPO A">2ª - GRUPO A</option>
+
+                    <option value="561f94ea256e2" id="ALEVÍN FEM.2ª - GRUPO B">2ª - GRUPO B</option>
+
+                    <option value="561f94f72db0d" id="ALEVÍN FEM.2ª - GRUPO C">2ª - GRUPO C</option>
+                </optgroup>
+
+                <optgroup label="Alevín Mixto">
+                    <!--option value="54d87d2e07953" id="ALEVÍN MIXTO 1ª - FASE 2 - GRUPO 1">1ª -FASE 2- GRUPO 1</option>
+
+                    <option value="54d87d3a566e9" id="ALEVÍN MIXTO 1ª - FASE 2 - GRUPO 2">1ª -FASE 2- GRUPO 2</option-->
+
+                    <option value="561f954d688da" id="ALEVÍN MIXTO 1ª - GRUPO A">1ª - GRUPO A
+                    </option>
+
+                    <option value="561f955da75a0" id="ALEVÍN MIXTO 1ª - GRUPO B">1ª - GRUPO B
+                    </option>
+
+                    <option value="561f953a87453" id="ALEVÍN MIXTO 2ª">2ª - G. ÚNICO</option>
+                </optgroup>
+
+                <optgroup label="Benjamín Mixto">
+                    <option value="5628b737582ad" id="BENJ. MIXTO GRUPO A">GRUPO A</option>
+
+                    <option value="5628b7481c2ed" id="BENJ. MIXTO GRUPO B">GRUPO B</option>
+
+                    <option value="5628b75a86a0d" id="BENJ. MIXTO GRUPO C">GRUPO C</option>
+
+                    <option value="5628b77a060e6" id="BENJ. MIXTO GRUPO D">GRUPO D</option>
+
+                    <option value="5628b78a55ca2" id="BENJ. MIXTO GRUPO E">GRUPO E</option>
+                </optgroup>
+            </select>
+
+            <br/>
+
+            <a id="jorn" href="#jornada" class="boton redondo" data-role="button"
+               data-icon="arrow-r" data-theme="a">Próxima jornada</a>
+            <br/>
+
+            <a id="clasi" href="#clasificacion" class="boton redondo" data-role="button"
+               data-icon="grid" data-theme="a">Clasificación</a>
+            <br/>
+
+            <a id="calend" href="#calendario" class="boton redondo" data-role="button"
+               data-icon="calendar" data-theme="a">Calendario y resultados</a>
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <h4>Temporada 2015-2016</h4>
+    </div>
+</div>
+
+<div data-role="page" id="clasificacion">
+
+    <div data-role="header">
+        <a href="#inicio" data-role="button" data-icon="home" data-theme="b" class="redondo"
+           data-transition="slideup">Inicio</a>
+
+        <h1>AlaBasket</h1>
+    </div>
+
+    <div data-role="content">
+        <h4 id="tituloClasi"></h4>
+        <h4 id="categoria"></h4>
+
+        <div id="notifClasi" class="notification"></div>
+        <table class="responsive table-stroke table-stripe" id="tablaClasi">
+            <thead>
+            <tr>
+                <th>Pos.</th>
+                <th>Equipo</th>
+                <th>J</th>
+                <th>G</th>
+                <th>P</th>
+                <th>NP</th>
+                <th>S</th>
+                <th>TF</th>
+                <th>TC</th>
+                <th>Puntos</th>
+            </tr>
+            </thead>
+            <tbody style="font-size:14px !important;"></tbody>
+        </table>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#jornada" data-icon="arrow-r">Próxima jornada</a></li>
+                <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="jornada">
+
+    <div data-role="header" data-position="fixed">
+        <a href="#inicio" data-icon="home" data-theme="b" class="redondo" data-transition="slideup">Inicio</a>
+
+        <h1>AlaBasket</h1>
+    </div>
+
+    <div data-role="content">
+        <h4 id="tituloJornada"></h4>
+        <h4 id="categori"></h4>
+
+        <div id="notifJorn" class="notification"></div>
+        <table data-role="table" data-mode="reflow" class="ui-responsive table-stroke table-stripe"
+               id="tablaJor">
+            <thead>
+            <tr>
+                <th data-priority="1">Equipo local</th>
+                <th data-priority="2">Tanteo</th>
+                <th data-priority="3">Equipo visitante</th>
+                <th data-priority="4">Fecha</th>
+                <th data-priority="5">Hora</th>
+                <th data-priority="6">Campo</th>
+                <th data-priority="7">Dirección</th>
+                <th data-priority="8">Localidad</th>
+                <th data-priority="9">Notas</th>
+                <th data-priority="10">Aplazado</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#clasificacion" data-icon="grid">Clasificación</a></li>
+                <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="calendario">
+
+    <div data-role="header">
+        <a href="#inicio" data-icon="home" data-theme="b" class="redondo" data-transition="slideup">Inicio</a>
+
+        <h1>AlaBasket</h1>
+    </div>
+
+    <div data-role="content">
+        <h3 id="tituloCalendario">Calendario y resultados</h3>
+
+        <h3 id="cat"></h3>
+
+        <div id="notifCal" class="notification"></div>
+        <div data-role="collapsible-set" id="collapsible-set">
+            <div data-role="collapsible" data-collapsed="true" sort="0">
+                <h3>Equipos</h3>
+                <table data-mode="reflow" class="ui-responsive table-stroke table-stripe"
+                       id="tablaEquipos">
+                    <thead>
+                    <tr>
+                        <th>Equipo</th>
+                        <th>Población</th>
+                        <th>Día</th>
+                        <th>Hora</th>
+                        <th>Cancha</th>
+                        <th>Equipación</th>
+                        <th>Delegado</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#clasificacion" data-icon="grid">Clasificación</a></li>
+                <li><a href="#jornada" data-icon="arrow-r">Próxima jornada</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
 			/*var today = new Date();
 			var hoy = new Date();
 			today.setDate(today.getDate()-7);
@@ -417,12 +482,7 @@
 			});
 
 			function jornada() {
-				$.mobile.loading('show', {
-					theme : "b",
-					text : "Cargando...",
-					textonly : false,
-					textVisible : true
-				});
+
 				$("#notifJorn").empty();
 				$("#tablaJor tbody").empty();
 				datos['tipo']="jornada";
@@ -446,22 +506,12 @@
 					error : function(error) {
 						$("#notifJorn").html(checkConnection());
 					},
-					complete : function() {
-
-						$.mobile.loading("hide");
-					},
 					dataType : "html",
 				});
 			}
 
 			function clasificacion() {
 
-				$.mobile.loading('show', {
-					theme : "b",
-					text : "Cargando...",
-					textonly : false,
-					textVisible : true
-				});
 				$("#notifClasi").empty();
 				$("#tablaClasi tbody").empty();
 				datos['tipo']="clasificaciones";
@@ -490,21 +540,12 @@
 					error : function(error) {
 						$("#notifClasi").html(checkConnection());
 					},
-					complete : function() {
-						$.mobile.loading("hide");
-					},
 					dataType : "html",
 				});
 			}
 			
 			function calendario() {
 
-				$.mobile.loading('show', {
-					theme : "b",
-					text : "Cargando...",
-					textonly : false,
-					textVisible : true
-				});
 				$("#notifCal").empty();
 				$("#tablaEquipos tbody").empty();
 				$(".esColapsible").remove();
@@ -600,7 +641,6 @@
 					},
 					complete : function() {
                         $("#collapsible-set").removeClass("invisible");
-						$.mobile.loading("hide");
 					},
 					dataType : "html",
 				});
@@ -608,15 +648,12 @@
 
 			function splitTable(original) {
 				original.wrap("<div class='table-wrapper' />");
-
 				var copy = original.clone();
 				copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
 				copy.removeClass("responsive");
-
 				original.closest(".table-wrapper").append(copy);
 				copy.wrap("<div class='pinned' />");
 				original.wrap("<div class='scrollable' />");
-
 				setCellHeights(original, copy);
 			}
 
@@ -628,17 +665,14 @@
 
 			function setCellHeights(original, copy) {
 				var tr = original.find('tr'), tr_copy = copy.find('tr'), heights = [];
-
 				tr.each(function(index) {
 					var self = $(this), tx = self.find('th, td');
-
 					tx.each(function() {
 						var height = $(this).outerHeight(true);
 						heights[index] = heights[index] || 0;
 						if (height > heights[index])
 							heights[index] = height;
 					});
-
 				});
 
 				tr_copy.each(function(index) {
@@ -653,6 +687,21 @@
 				return "<p>Error obteniendo los datos solicitados, servidor no disponible.</p>";
 			}
 
+			//Display loader
+			$(document).ajaxSend(function() {
+				$.mobile.loading('show', {
+					theme : "b",
+					text : "Cargando...",
+					textonly : false,
+					textVisible : true
+				});
+			});
+
+			//All done, hide loader
+			$(document).ajaxComplete(function() {
+				$.mobile.loading("hide");
+			});
+
 			/*function jornadaActual(fechaJornada){
 				var fecha = fechaJornada.split(" ")[3];
 				var newDate = new Date(fecha.split("/")[2],fecha.split("/")[1]-1,fecha.split("/")[0]);
@@ -666,6 +715,6 @@
 				var position = $(this).offset().top;
 				$.mobile.silentScroll(position);
 			});*/
-		</script>
-	</body>
+</script>
+</body>
 </html>
